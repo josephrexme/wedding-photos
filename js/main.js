@@ -1,13 +1,3 @@
-/**
- * main.js
- * http://www.codrops.com
- *
- * Licensed under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
- * 
- * Copyright 2015, Codrops
- * http://www.codrops.com
- */
 ;(function(window) {
 
 	'use strict';
@@ -24,7 +14,16 @@
 	/**
 	 * some helper functions
 	 */
-	
+
+	var classie = {
+		add: function(el, className) {
+			el.classList.add(className);
+		},
+		remove: function(el, className) {
+			el.classList.remove(className);
+		}
+	}
+
 	function throttle(fn, delay) {
 		var allowSample = true;
 
