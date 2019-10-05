@@ -18,7 +18,7 @@
 body {
 	font-family: "Avenir Next", Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
 	color: #fff;
-	background: #252323;
+	background: #272727;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	overflow-y: scroll;
@@ -226,6 +226,7 @@ button:focus {
 }
 
 .description {
+	opacity: 0;
 	color: #fff;
 }
 
