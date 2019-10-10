@@ -65,7 +65,7 @@
 		this.previewEl = nextSibling(this.gridEl);
 		this.isExpanded = false;
 		this.isAnimating = false;
-		this.closeCtrl = this.previewEl.querySelector('button.action--close');
+		this.closeCtrl = this.previewEl.querySelector('button.action');
 		this.previewDescriptionEl = this.previewEl.querySelector('.description--preview');
 
 		this._init();
@@ -93,11 +93,6 @@
 		var self = this;
 		// init masonry after all images are loaded
 		imagesLoaded( this.gridEl, function() {
-			// initialize masonry
-			new Masonry(self.gridEl, {
-				itemSelector: '.grid__item',
-				isFitWidth : true
-			});
 			// show grid after all images (thumbs) are loaded
 			classie.add(self.gridEl, 'grid--loaded');
 			// init/bind events
@@ -196,11 +191,7 @@
 		this.cloneImg.style.WebkitTransform = 'translate3d(' + dx + 'px, ' + dy + 'px, 0) scale3d(' + z + ', ' + z + ', 1)';
 		this.cloneImg.style.transform = 'translate3d(' + dx + 'px, ' + dy + 'px, 0) scale3d(' + z + ', ' + z + ', 1)';
 
-		// add the description if any
-		var descriptionEl = item.querySelector('.description');
-		if( descriptionEl ) {
-			this.previewDescriptionEl.innerHTML = descriptionEl.innerHTML;
-		}
+		this.previewDescriptionEl.innerHTML = gridImg.getAttribute('alt');
 
 		var self = this;
 		setTimeout(function() { 
